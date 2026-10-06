@@ -1,0 +1,139 @@
+/* Folha de estilos externa. Personalize as cores nas variáveis abaixo. */
+:root {
+  --navy: #15243b;
+  --blue: #2456b8;
+  --text: #28364a;
+  --muted: #5b687b;
+  --line: #dce3ec;
+  --background: #f3f6fa;
+  --white: #ffffff;
+}
+
+/* Ajustes gerais e acessibilidade */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
+body { margin: 0; background: var(--background); color: var(--text); font-family: "Segoe UI", Arial, sans-serif; font-size: 1rem; line-height: 1.7; }
+a { color: var(--blue); text-underline-offset: .2em; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible { outline: 3px solid #df9a17; outline-offset: 5px; border-radius: 3px; }
+h1, h2, h3, p, dl { margin-top: 0; }
+h1, h2, h3 { line-height: 1.25; }
+p { margin-bottom: 1rem; }
+dd { margin: 0; }
+section, #inicio { scroll-margin-top: 1rem; }
+.skip-link { position: absolute; left: 1rem; top: -6rem; z-index: 20; padding: .7rem 1rem; background: var(--white); }
+.skip-link:focus { top: 1rem; }
+
+/* Cabeçalho e navegação */
+.site-header { border-bottom: 1px solid var(--line); background: var(--white); }
+.header-content { max-width: 1200px; margin: auto; padding: 1.25rem 2rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
+.brand { color: var(--navy); font-size: 1.1rem; font-weight: 750; text-decoration: none; white-space: nowrap; }
+.brand span { color: var(--muted); font-weight: 400; }
+nav { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; }
+nav a { color: var(--muted); font-size: .9rem; font-weight: 600; text-decoration: none; padding: .2rem 0; }
+nav a:hover { color: var(--blue); text-decoration: underline; }
+
+/* Grade principal: perfil à esquerda, currículo à direita */
+.page-layout { max-width: 1200px; margin: 2.75rem auto; padding: 0 2rem; display: grid; grid-template-columns: 320px minmax(0, 1fr); gap: 2.25rem; align-items: start; }
+.profile { background: var(--navy); color: var(--white); padding: 2.4rem 2rem; border-radius: 12px; overflow-wrap: anywhere; border-top: 6px solid #3c74d8; }
+.eyebrow { text-transform: uppercase; letter-spacing: .12em; font-size: .8rem; font-weight: 650; }
+.profile .eyebrow { color: #afc5eb; margin-bottom: 1rem; }
+h1 { font-size: clamp(2rem, 3vw, 2.75rem); letter-spacing: -.045em; margin-bottom: 1rem; }
+.profile-role { font-size: 1.1rem; color: #dae5f6; }
+.profile-summary { color: #c3d0e2; font-size: .95rem; }
+.profile-details { margin-top: 2rem; border-top: 1px solid #3b4b62; padding-top: 1.6rem; }
+.profile-details dl { margin-bottom: 1.8rem; }
+.profile-details dl div + div { margin-top: 1rem; }
+.profile-details dt { color: #afc5eb; font-size: .85rem; }
+.profile-details dd { font-size: .95rem; }
+.contact-button { display: block; background: var(--white); color: var(--navy); text-align: center; text-decoration: none; padding: .75rem 1rem; border-radius: 6px; font-weight: 700; }
+.contact-button:hover { background: #e6eefc; }
+.profile-caption { margin: 1.2rem 0 0; text-align: center; font-size: .8rem; color: #afc5eb; }
+.content-column { min-width: 0; }
+
+/* Seções e tipografia */
+.section { background: var(--white); border: 1px solid var(--line); border-radius: 10px; padding: 2rem; margin-bottom: 1.25rem; overflow-wrap: anywhere; }
+.section:last-child { margin-bottom: 0; }
+.section > p:last-child { margin-bottom: 0; }
+.section-heading { display: flex; align-items: center; gap: .85rem; margin-bottom: 1.35rem; }
+.section-number { color: var(--blue); font-size: .85rem; font-weight: 700; background: #edf3fe; padding: .2rem .55rem; border-radius: 5px; }
+h2 { font-size: 1.4rem; color: var(--navy); letter-spacing: -.025em; margin-bottom: 0; }
+h3 { font-size: 1.1rem; color: var(--navy); margin-bottom: .6rem; }
+.lead { font-size: 1.18rem; line-height: 1.6; }
+.item-label { color: var(--muted); font-size: .875rem; margin-bottom: .65rem; }
+.institution { color: var(--blue); font-weight: 600; margin-bottom: .8rem; }
+.timeline-item { border-left: 3px solid #a5bde7; padding-left: 1.25rem; }
+.timeline-item p:last-child { margin-bottom: 0; }
+.description-list { padding-left: 1.25rem; margin: 0; }
+.description-list li + li { margin-top: .45rem; }
+
+/* Projetos e habilidades */
+.project-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+.project-card { padding: 1.25rem; background: #f7f9fc; border: 1px solid var(--line); border-radius: 7px; }
+.project-card p:not(.item-label) { font-size: .95rem; }
+.tags { list-style: none; display: flex; flex-wrap: wrap; gap: .4rem; margin: 1rem 0 0; padding: 0; }
+.tags li { border: 1px solid #cfdaeb; border-radius: 4px; padding: .15rem .5rem; font-size: .8rem; color: #37527b; background: var(--white); }
+.skills-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
+.skill-list { list-style: none; padding: 0; margin: 0; }
+.skill-list li { padding: .6rem 0; border-bottom: 1px solid var(--line); }
+.skill-list li:last-child { border-bottom: none; }
+
+/* Contatos e rodapé */
+.contact-section { border-top: 3px solid var(--blue); }
+.contact-list { margin-bottom: 0; }
+.contact-list div { padding: .8rem 0; border-bottom: 1px solid var(--line); }
+.contact-list div:last-child { padding-bottom: 0; border-bottom: 0; }
+.contact-list dt { font-size: .875rem; color: var(--muted); font-weight: 600; }
+.contact-list dd { margin-top: .15rem; }
+.site-footer { max-width: 1200px; padding: 1.5rem 2rem 2rem; margin: auto; display: flex; justify-content: space-between; gap: 1rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .875rem; }
+.site-footer p { margin-bottom: 0; }
+
+/* Tablet e celular: o perfil passa para cima das demais seções. */
+@media (max-width: 950px) {
+  .header-content { flex-direction: column; align-items: flex-start; gap: .75rem; }
+  .page-layout { grid-template-columns: 1fr; gap: 1.5rem; margin-top: 1.75rem; }
+  .profile { padding: 2rem; }
+  h1 { font-size: 2.5rem; }
+  .profile-details dl { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+  .profile-details dl div + div { margin-top: 0; }
+  .contact-button { display: inline-block; }
+  .profile-caption { text-align: left; }
+}
+@media (max-width: 600px) {
+  .header-content { padding: 1rem 1.25rem; }
+  nav { gap: .4rem 1rem; }
+  .page-layout { padding: 0 1rem; margin: 1.25rem auto 2rem; }
+  .profile, .section { padding: 1.5rem; }
+  h1 { font-size: 2.2rem; }
+  h2 { font-size: 1.25rem; }
+  .profile-details dl, .project-grid, .skills-grid { grid-template-columns: 1fr; }
+  .profile-details dl { gap: .75rem; }
+  .site-footer { padding: 1.25rem; flex-direction: column; gap: .5rem; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* Uma impressão em papel preserva o conteúdo sem a navegação. */
+@media print {
+  body { background: white; color: black; font-size: 11pt; }
+  .site-header, .skip-link, .contact-button, .profile-caption, .site-footer a { display: none; }
+  .page-layout { display: block; max-width: none; margin: 0; padding: 0; }
+  .profile { color: black; background: white; border: none; padding: 0 0 1rem; }
+  .profile p, .profile dt, .profile dd { color: black; }
+  .profile-details { display: none; }
+  .section { border: none; padding: .75rem 0; margin-bottom: .5rem; break-inside: avoid; }
+  .section-number { background: white; }
+  .project-card { background: white; }
+  .site-footer { padding: .75rem 0; }
+  a { color: black; }
+}
+
+/* Formação complementar e experiências anteriores */
+.additional-courses { margin-top: 1.5rem; }
+.higher-education { margin-bottom: 1.5rem; }
+.current-job { margin-bottom: 1.5rem; }
+.previous-title { color: var(--muted); font-size: 1rem; }
+.experience-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.experience-list article { border-bottom: 1px solid var(--line); padding: .5rem 0; }
+.experience-list article h3 { font-size: 1rem; margin-bottom: .35rem; }
+.experience-list article p { margin: 0; font-size: .95rem; }
+@media (max-width: 600px) { .experience-list { grid-template-columns: 1fr; } }
